@@ -1,4 +1,3 @@
-from random import choice
 
 from tenant_type_one_only.forms import GenerateUsersForm
 from customers.models import Client
@@ -9,6 +8,7 @@ from django.views.generic import FormView, TemplateView
 from tenant_type_one_only.models import UploadFile
 
 from django_tenants.urlresolvers import reverse_lazy
+import secrets
 
 
 class TenantView(TemplateView):
@@ -44,8 +44,8 @@ class TenantViewRandomForm(FormView):
                       "Taylor", "Wong", "Campbell", "Williams"]
 
         while User.objects.count() != users_to_generate:
-            first_name = choice(first_names)
-            last_name = choice(last_names)
+            first_name = secrets.SystemRandom().choice(first_names)
+            last_name = secrets.SystemRandom().choice(last_names)
             try:
                 user = User(username=(first_name+last_name).lower(),
                             email="%s@%s.com" % (first_name, last_name),
