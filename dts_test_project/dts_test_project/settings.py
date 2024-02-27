@@ -131,3 +131,4 @@ USE_TZ = False
 STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
+SESSION_COOKIE_SECURE = True
