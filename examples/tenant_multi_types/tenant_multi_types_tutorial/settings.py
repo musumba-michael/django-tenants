@@ -230,3 +230,4 @@ MULTITENANT_RELATIVE_MEDIA_ROOT = "uploaded_files"
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 EXTRA_SET_TENANT_METHOD_PATH = "tenant_multi_types_tutorial.set_tenant_utils.extra_set_tenant_stuff"
+SESSION_COOKIE_SECURE = True
